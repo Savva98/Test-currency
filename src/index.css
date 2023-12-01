@@ -1,13 +1,136 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(43, 40, 40, 0.795);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas,
+    "Courier New", monospace;
+}
+
+.head {
+  display: grid;
+  justify-content: center;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  align-content: center;
+  width: 100%;
+  height: clamp(40px, 50px, 60px);
+  background-color: rgba(116, 53, 116, 0.938);
+  grid-template-columns: 1fr 0.3fr;
+}
+.search {
+  border: none;
+  background-color: rgba(131, 98, 131, 0.747);
+  border-radius: 10px;
+  padding: 10px;
+  width: clamp(200px, 400px, 500px);
+  color: rgba(29, 29, 29, 0.808);
+  align-self: center;
+  margin: auto;
+}
+
+.search:focus {
+  outline: none;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.226);
+  transform: translateY(-3px);
+}
+
+.search::placeholder {
+  color: rgba(49, 48, 48, 0.89);
+}
+
+.head ul {
+  list-style: none;
+  display: flex;
+  width: clamp(100px, 300px, 400px);
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 20px;
+  align-self: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.head ul li {
+  color: white;
+}
+
+.exchange {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  padding: 2rem 2rem;
+  align-content: center;
+  justify-content: center;
+  width: 500px;
+  height: 300px;
+  background-color: rgba(51, 51, 51, 0.596);
+  gap: 1rem;
+  border-radius: 20px;
+  color: rgb(207, 206, 206);
+}
+
+.rate {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.rate p {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
+  align-self: center;
+}
+.rate h2 {
+  font-size: 22px;
+  align-self: center;
+  margin-top: -3px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+/* .exchange div {
+  display: flex;
+  gap: 7px;
+  width: 100%;
+} */
+/* .exchange div select {
+  justify-self: end;
+} */
+
+.inputs {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+}
+.inputs input {
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: rgba(71, 70, 70, 0.596);
+  color: white;
+}
+.inputs select {
+  border-color: rgb(56, 102, 86);
+  border-radius: 7px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+.inputs select:focus {
+  outline: none;
+}
+
+.inputs input:focus {
+  outline: none;
+  box-shadow: 1px 1px 1px 1px rgb(70, 70, 70);
+  transform: translateY(-2px);
 }
