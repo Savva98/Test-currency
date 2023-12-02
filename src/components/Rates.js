@@ -7,9 +7,9 @@ export default function Rates({
 }) {
   const [currencyRates, setCurrencyRates] = useState(0);
   async function makeRates(curr1, curr2) {
-    const currLower = curr1.toLowerCase();
-    const curr2Lower = curr2.toLowerCase();
     try {
+      const currLower = curr1.toLowerCase();
+      const curr2Lower = curr2.toLowerCase();
       const resp = await fetch(
         `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currLower}/${curr2Lower}.json`
       );
