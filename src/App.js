@@ -145,42 +145,39 @@ export default function App() {
     [query, currency]
   );
 
-  useEffect(
-    function () {
-      async function allCurencies() {
-        try {
-          const currencies = await fetch(
-            `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json`
+  useEffect(function () {
+    async function allCurencies() {
+      try {
+        const currencies = await fetch(
+          `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json`
+        );
+        const currency = await currencies.json();
+        setCurrencies(currency);
+        for (
+          let index = 0;
+          index < currencyArr.length;
+          index++
+        ) {
+          const currency = await fetch(
+            `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currencyArr[
+              index
+            ].toLowerCase()}.json`
           );
-          const currency = await currencies.json();
-          setCurrencies(currency);
-          for (
-            let index = 0;
-            index < currencyArr.length;
-            index++
-          ) {
-            const currency = await fetch(
-              `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currencyArr[
-                index
-              ].toLowerCase()}.json`
-            );
-            const data = await currency.json();
-            setRates((obj) => {
-              return {
-                ...obj,
-                [currencyArr[index].toLowerCase()]:
-                  data[currencyArr[index].toLowerCase()],
-              };
-            });
-          }
-        } catch (err) {
-          console.error(err.message);
+          const data = await currency.json();
+          setRates((obj) => {
+            return {
+              ...obj,
+              [currencyArr[index].toLowerCase()]:
+                data[currencyArr[index].toLowerCase()],
+            };
+          });
         }
+      } catch (err) {
+        console.error(err.message);
       }
-      allCurencies();
-    },
-    [setRates, setCurrencies]
-  );
+    }
+    allCurencies();
+  }, []);
   useEffect(function () {
     async function change() {
       try {
