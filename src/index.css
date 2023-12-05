@@ -86,8 +86,8 @@ code {
   gap: 1rem;
   border-radius: 20px;
   color: rgb(207, 206, 206);
-  height: clamp(20%, 40%, 50%);
-  width: clamp(20%, 50%, 60%);
+  height: clamp(20%, 30%, 50%);
+  width: clamp(20%, 40%, 40%);
 }
 
 .rate {
