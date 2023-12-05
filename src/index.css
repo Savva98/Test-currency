@@ -21,7 +21,7 @@ code {
   top: 0;
   align-content: center;
   width: 100%;
-  height: clamp(40px, 50px, 60px);
+  height: 70px;
   background-color: rgba(116, 53, 116, 0.938);
   grid-template-columns: 1fr 0.3fr;
 }
@@ -30,7 +30,7 @@ code {
   background-color: rgba(131, 98, 131, 0.747);
   border-radius: 10px;
   padding: 10px;
-  width: clamp(200px, 400px, 500px);
+  width: clamp(7vw, 30vw, 40vw);
   color: rgba(29, 29, 29, 0.808);
   align-self: center;
   margin: auto;
@@ -49,14 +49,24 @@ code {
 .head ul {
   list-style: none;
   display: flex;
-  width: clamp(100px, 300px, 400px);
+  width: clamp(10vw, 20vw, 30vw);
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   margin-right: 20px;
   align-self: center;
   flex-direction: column;
   gap: 5px;
+}
+@media screen and (max-width: 900px) {
+  .head ul {
+    flex-direction: row;
+    gap: 10px;
+    margin-right: 70px;
+  }
+  .head {
+    height: 90px;
+  }
 }
 
 .head ul li {
@@ -72,12 +82,12 @@ code {
   padding: 2rem 2rem;
   align-content: center;
   justify-content: center;
-  width: 500px;
-  height: 300px;
   background-color: rgba(51, 51, 51, 0.596);
   gap: 1rem;
   border-radius: 20px;
   color: rgb(207, 206, 206);
+  height: clamp(20%, 40%, 50%);
+  width: clamp(20%, 50%, 60%);
 }
 
 .rate {
@@ -86,13 +96,13 @@ code {
   width: 100%;
 }
 .rate p {
-  font-size: 18px;
+  font-size: clamp(10px, 16px, 18px);
   font-weight: 500;
   letter-spacing: 1.4px;
   align-self: center;
 }
 .rate h2 {
-  font-size: 22px;
+  font-size: clamp(10px, 16px, 18px);
   align-self: center;
   margin-top: -3px;
   font-weight: 400;
@@ -110,7 +120,7 @@ code {
 .inputs {
   width: 100%;
   display: flex;
-  gap: 30px;
+  gap: clamp(1vw, 2vw, 4vw);
 }
 .inputs input {
   border: none;
@@ -118,12 +128,14 @@ code {
   padding: 8px;
   background-color: rgba(71, 70, 70, 0.596);
   color: white;
+  width: clamp(20%, 50%, 60%);
 }
 .inputs select {
   border-color: rgb(56, 102, 86);
   border-radius: 7px;
-  padding-right: 10px;
+  padding-right: clamp(0vw, 2vw, 3vw);
   cursor: pointer;
+  width: clamp(10%, 30%, 40%);
 }
 .inputs select:focus {
   outline: none;
