@@ -6,6 +6,7 @@ import Search from "./components/Search";
 import Exchanger from "./components/Exchanger";
 import InputForExchange from "./components/InputFieldForExchange";
 import Rates from "./components/Rates";
+import AsynchroniousInputs from "./components/TryAsync";
 const currencyArr = ["UAH", "USD", "EUR", "GBP", "PLN"];
 
 export default function App() {
@@ -233,6 +234,7 @@ export default function App() {
           onSetInput={handleChangeAmount2}
         />
       </Exchanger>
+      {/* <AsynchroniousInputs /> */}
     </div>
   );
 }

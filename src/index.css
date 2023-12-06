@@ -146,3 +146,14 @@ code {
   box-shadow: 1px 1px 1px 1px rgb(70, 70, 70);
   transform: translateY(-2px);
 }
+
+.async {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  width: 300px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
